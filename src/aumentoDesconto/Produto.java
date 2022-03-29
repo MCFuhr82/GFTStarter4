@@ -15,6 +15,7 @@ public class Produto {
         this.percentual = percentual;
     }
 
+    //metodo para aplicar o desconto ou o acrescimo e calcular o valor final
     public void calcularValorFinal(){
         if (operacao == "desconto") {
             valorFinal = valorReal * (1.00 - percentual);

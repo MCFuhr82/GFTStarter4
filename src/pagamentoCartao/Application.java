@@ -21,6 +21,7 @@ public class Application {
         System.out.println("2 - Debito");
         int modalidade = sc.nextInt();
 
+        //testando cartoes e modalidades
         if (cartao == 1) {
             System.out.println("Pago com Visa");
             if (modalidade == 1) {

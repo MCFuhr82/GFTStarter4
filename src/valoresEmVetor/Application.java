@@ -15,15 +15,23 @@ public class Application {
         int[] vetorDeInteiros = new int[n];
 
         for (int i = 0; i < n; i++) {
-            System.out.println("Digite um numero inteiro para adicionar ao vetor:");
+            System.out.println("Digite um numero para adicionar ao vetor:");
             int numeroParaAdicionar = sc.nextInt();
+
+            //comparando o numero a adicionar com os numeros dentro dos vetores
             boolean numeroTemNoVetor = (IntStream.of(vetorDeInteiros).anyMatch(x -> x == numeroParaAdicionar));
+
+            // se o primeiro numero for 0, deixa adicionar
+            if(i == 0 && numeroParaAdicionar == 0) {
+                vetorDeInteiros[i] = numeroParaAdicionar;
+            } else { //testando se o numero já existe no vetor
                 if (!numeroTemNoVetor) {
                     vetorDeInteiros[i] = numeroParaAdicionar;
                 } else {
                     System.out.println("Numero repetido, digite outro!!");
                     i--;
                 }
+            }
         }
 
         Arrays.sort(vetorDeInteiros);
@@ -31,9 +39,6 @@ public class Application {
         for (int numero: vetorDeInteiros) {
             System.out.print(numero + " ");
         }
-
-
-
 
     }
 }
